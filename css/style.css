@@ -1,0 +1,13 @@
+.my-container {
+    width: 700px;
+    margin: 200px auto;
+}
+
+.list-group {
+    position: relative;
+}
+
+.move-right {
+    position: absolute;
+    right: 5px;
+}
