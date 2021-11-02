@@ -17,22 +17,25 @@
 <body>
 
     <div id="root" class="my-container">
-      
+
         <h1 class="mb-4 text-center"> Hello Vueoolean - Todolist</h1>
 
         <section class="d-flex mb-5">
-            <input v-model="newTask" class="form-control" placeholder="Vorrei...">
+            <input v-on:keyup.enter="fillTaskList" v-model="newTask" class="form-control" placeholder="Vorrei...">
             <button @click="fillTaskList" class="btn btn-outline-primary" type="button">Aggiungi</button>
         </section>
 
-
-        <div class="list-group">
-            <div class="list-group-item d-flex align-items-center py-3">
-                
-            <button type="button" class="btn-close move-right"></button>
+        <section>
+            <div class="list-group">
+                <div v-for="(task, index) in tasksList" class="list-group-item d-flex align-items-center py-3">
+                    {{ task }}
+                    <button @click="removeTask(index)" type="button" class="btn-close move-right"></button>
+                </div>
             </div>
-        </div>
+        </section>
+        
     </div>
+
 
     <script src="js/script.js"></script>
 </body>
